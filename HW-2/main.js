@@ -13,7 +13,7 @@ console.log(average);
 let circleRadius = 14;
 console.log(circleRadius);
 
-// ввожу змінну зі значенням числа Пі //
+// ввожу змінну зі значенням числа Пі 
 let numberP = 3.14;
 
 let length;
