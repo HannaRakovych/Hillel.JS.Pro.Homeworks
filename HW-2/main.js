@@ -1,11 +1,11 @@
-const myName = "Anna";
-console.log(myName);
+const MY_NAME = "Anna";
+console.log(MY_NAME);
 
 let mySurname = "Rakovych";
 console.log(mySurname);
 
-const myCity = "Kyiv";
-console.log(myCity);
+const MY_CITY = "Kyiv";
+console.log(MY_CITY);
 
 let average = (11 + 22 + 33 + 44) / 4;
 console.log(average);
