@@ -54,5 +54,5 @@ console.log(`Остача від ділення числа ${firstNum} на чи
 // 11.  Користувач вводить число. Визначити чи число парне чи не парне
 let randomNum = +prompt("Введіть будь-яке число");
 console.log(randomNum);
-let result = ((randomNum % 2 == 0) ? "парне" : "непарне");
-console.log(`Число ${result}.`);
+const RESULT = randomNum % 2 === 0 ? "парне" : "непарне";
+console.log(`Число ${RESULT}.`);
