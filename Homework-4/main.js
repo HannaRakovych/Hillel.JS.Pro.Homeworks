@@ -29,7 +29,7 @@ console.log(USER_PASSWORD);
 
 if (USER_LOGIN === 'admin' && USER_PASSWORD === '12pass33210') {
     console.log("Ви успішно залогінені :)")
-} else if (USER_LOGIN === 'admin' || USER_PASSWORD === '12pass33210') {
+} else if (USER_LOGIN !== 'admin' || USER_PASSWORD !== '12pass33210') { 
     console.log("Проблема з логіном або паролем :(")
 } else {
     console.log("Нажаль Ви не маєте доступу до admin-панелі.")
@@ -37,7 +37,7 @@ if (USER_LOGIN === 'admin' && USER_PASSWORD === '12pass33210') {
                                                     // 2nd variant - ternary operator
 
 let userPass = USER_LOGIN === 'admin' && USER_PASSWORD === '12pass33210' ? console.log("Ви успішно залогінені :)") 
-    : USER_LOGIN === 'admin' || USER_PASSWORD === '12pass33210' ? console.log("Проблема з логіном або паролем :(") 
+    : USER_LOGIN !== 'admin' || USER_PASSWORD !== '12pass33210' ? console.log("Проблема з логіном або паролем :(") 
     : console.log("Нажаль Ви не маєте доступу до admin-панелі.");
 
 
