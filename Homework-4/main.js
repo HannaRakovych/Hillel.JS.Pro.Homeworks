@@ -1,12 +1,16 @@
 // 1. Додати 0.1 та 0.2 так, що був правильний математичний результат
-const NUM1 = 0.1;
-const NUM2 = 0.2;
+// const NUM1 = 0.1;
+// const NUM2 = 0.2;
 
-const RES1 = NUM1 * 10;
-const RES2 = NUM2 * 10;
+// const RES1 = NUM1 * 10;
+// const RES2 = NUM2 * 10;
 
-const MATH_RES = (RES1 + RES2) / 10;
+// const MATH_RES = (RES1 + RES2) / 10;
+// console.log(MATH_RES);
+
+const MATH_RES = +(0.1 + 0.2).toFixed(1);
 console.log(MATH_RES);
+
 
 // 2. Зберегти логін користувача із prompt
 const USER_LOGIN = prompt("Введіть свій логін");
