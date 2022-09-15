@@ -81,7 +81,7 @@ for (let i = 0; i < arr.length; i++) {
     } else if (arr[i] === 0) {
         zeroNumSum++;
     }
-    if (arr[i] % 2 === 0) {
+    if (arr[i] % 2 === 0 && arr[i] !== 0) {
         pairdNumSum++;
     } else if (arr[i] % 2 !== 0) {
         unpairdNumSum++;
