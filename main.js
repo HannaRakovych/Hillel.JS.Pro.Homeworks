@@ -29,16 +29,15 @@ if (USER_NUM === 1) {
 const PURCHASE_AMOUNT = +prompt("How much money did you spent?");
 console.log(PURCHASE_AMOUNT);
 
+let discount = null;
 if (PURCHASE_AMOUNT < 100 && PURCHASE_AMOUNT > 0) {
-    const DISCOUNT_3 = (PURCHASE_AMOUNT * 0.03).toFixed(2);
-    console.log(`Your discount is ${DISCOUNT_3} - 3%`);
+    discount = (PURCHASE_AMOUNT * 0.03).toFixed(2);
 } else if (PURCHASE_AMOUNT >= 100 && PURCHASE_AMOUNT < 200) {
-    const DISCOUNT_5 = (PURCHASE_AMOUNT * 0.05).toFixed(2);
-    console.log(`Your discount is ${DISCOUNT_5} - 5%`);
+    discount = (PURCHASE_AMOUNT * 0.05).toFixed(2);
 } else if (PURCHASE_AMOUNT >= 200) {
-    const DISCOUNT_7 = (PURCHASE_AMOUNT * 0.07).toFixed(2);
-    console.log(`Your discount is ${DISCOUNT_7} - 7%`);
+    discount = (PURCHASE_AMOUNT * 0.07).toFixed(2);
 }
+console.log(`Your discount is ${discount}%`);
 
 
 // 5. Вивести таблицю множення чисел від 2 до 9 у зрозумілому форматі
