@@ -1,7 +1,6 @@
 // 1. Написати функцію, яка приймає 4 аргументи і шукає найменше число серед них
 const GET_MIN_NUM = function (num1, num2, num3, num4) {
     const MIN = Math.min(num1, num2, num3, num4);
-    console.log(MIN)
 }
 GET_MIN_NUM()
 
@@ -18,7 +17,7 @@ const GET_GREATEST_COMMON_DENOMINATOR = function (num1, num2) {
     }
     return num1;
   }
-console.log(GET_GREATEST_COMMON_DENOMINATOR())
+GET_GREATEST_COMMON_DENOMINATOR()
 
 // 3. Написати функцію, яка приймає 1 аргумент та перевіряє чи дане число ідеальне
 const PERFECT_NUMBER = function (num) {
@@ -29,9 +28,9 @@ const PERFECT_NUMBER = function (num) {
         }
     }
     if (step === num && step !== 0) {
-        console.log(`The number ${num} is perfect!`)
+        //console.log(`The number ${num} is perfect!`)
     } else {
-        console.log(`The number ${num} is NOT perfect!`)
+        //console.log(`The number ${num} is NOT perfect!`)
     }
 }
 PERFECT_NUMBER()
@@ -43,11 +42,10 @@ const RANGE_SUM = function(num1, num2) {
         for (let i = num2; i <= num1; i++) {
             sum += i;
         } 
-        console.log(sum);
     } else {
         for (let i = num1; i <= num2; i++) {
             sum += i;
-        } console.log(sum);
+        }
     }
 }
 RANGE_SUM()
@@ -55,7 +53,6 @@ RANGE_SUM()
 // 5. Написати функцію, яка приймає та конвертує температуру із Цельсій у Фаренгейт
 const TEMP_F = function (randomTemp) {
     const CONVERTATION_FROM_C_TO_F = randomTemp * 1.8 + 32;
-    console.log(CONVERTATION_FROM_C_TO_F)
 }
 TEMP_F()
 
@@ -63,6 +60,5 @@ TEMP_F()
 let max = 40;
 const RANDOM_NUM = function () {
     const RANDOM_INTEGER = Math.floor(Math.random() * max);
-    console.log(RANDOM_INTEGER)
 }
 RANDOM_NUM()
