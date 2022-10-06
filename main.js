@@ -3,18 +3,18 @@ const VALIDATE = (prop) => {
 }
 
 const validateNumbers = (prop) => {
-    prop === NaN;
+    isNaN(prop);
 }
 
 // 1. Створити масив, довжину та елементи якого задає користувач (через prompt). Елементами масиву повинні бути числа.
-const arraySize = prompt("Please, enter an array length:");
+const arraySize = +prompt("Please, enter an array length:");
 let newArray = [];
 
 const createArray = (size, arr) => {
     if(VALIDATE(size) || size < 1 || validateNumbers(size)) {
         prompt("Please try one more time and enter the length of your future array!");
     } else {
-        for (i = 0; i < size; i++) {
+        for (let i = 0; i < size; i++) {
             arr[i] = prompt("Please enter a number.");
                 if(VALIDATE(arr[i]) || validateNumbers(arr[i])) {
                     return;
@@ -71,7 +71,7 @@ const addNewProduct = (array, obj) => {
     obj.productName = prompt("Введіть назву продукту, який би додатково хотіли б придбати.");
     obj.productPrice = +prompt("Вкажіть вартість цього продукту.");
     obj.productQuantity = +prompt("Вкажіть кількість цього продукту.");
-    if (VALIDATE(obj.productName) || !isNaN(obj.productName) || VALIDATE(obj.productPrice) || validateNumbers(obj.productPrice) || VALIDATE(obj.productQuantity) || validateNumbers(obj.productQuantity)){
+    if (VALIDATE(obj.productName) || VALIDATE(obj.productPrice) || validateNumbers(obj.productPrice) || VALIDATE(obj.productQuantity) || validateNumbers(obj.productQuantity)){
         return false;
     } else {
         return array.push(obj);
@@ -115,7 +115,7 @@ console.log(`Сума позитивних елементів = ${positiveNumber
 
 function getPositiveCount(arr) {
     return arr.filter(el => el > 0).length;
-};
+}
 console.log("Кількість позитивних елементів: " + getPositiveCount(myArray) + ".");
 
 // Знайти мінімальний елемент масиву та його порядковий номер.
@@ -131,7 +131,7 @@ console.log(`Mаксимальний елемент масиву: ${max}, йог
 // Визначити кількість негативних елементів.
 function getNegativeCount(arr) {
     return arr.filter(el => el < 0).length;
-};
+}
 console.log(getNegativeCount(myArray));    
 
 // Знайти кількість непарних позитивних елементів.
