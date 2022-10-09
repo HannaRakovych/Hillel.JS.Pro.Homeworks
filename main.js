@@ -11,7 +11,7 @@ const arraySize = +prompt("Please, enter an array length:");
 let newArray = [];
 
 const createArray = (size, arr) => {
-    if(VALIDATE(size) || size < 1 || validateNumbers(size)) {
+    if(validateNumbers(size) || size === undefined || size === null || size < 1) {
         prompt("Please try one more time and enter the length of your future array!");
     } else {
         for (let i = 0; i < size; i++) {
@@ -57,8 +57,8 @@ console.log(sortedByQuantity)
 // console.log("Найменша кількість продукту, який ми маємо придбати - " + sortedByQuantity[0].productName + " - " + sortedByQuantity[0].productQuantity + ".")
 
 // Порахувати загальну кількість продуктів
-const totalQantity = productArray.reduce((totalQantity, {productQuantity}) => totalQantity + productQuantity, 0);
-console.log(`Загальна кількість товарів = ${totalQantity}.`)
+const totalQuantity = productArray.reduce((totalQuantity, {productQuantity}) => totalQuantity + productQuantity, 0);
+console.log(`Загальна кількість товарів = ${totalQuantity}.`)
 
 // Знайти найдорожчий продукт
 const mostExpensiveProduct = productArray.sort(sortedByField("productPrice"));
@@ -126,7 +126,7 @@ console.log(`Мінімальний елемент масиву: ${min}, йог�
 // Знайти максимальний елемент масиву та його порядковий номер.
 const max = Math.max(...myArray);
 const positionMaxInArray = myArray.indexOf(max) + 1;
-console.log(`Mаксимальний елемент масиву: ${max}, його порядковий номер: ${positionMaxInArray}.`);
+console.log(`Максимальний елемент масиву: ${max}, його порядковий номер: ${positionMaxInArray}.`);
 
 // Визначити кількість негативних елементів.
 function getNegativeCount(arr) {
