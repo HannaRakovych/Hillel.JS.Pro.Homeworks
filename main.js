@@ -39,8 +39,9 @@ const shoes = {
     type: "loffers",
 }
 
+// eslint-disable-next-line no-unused-vars
 function dataObj(brand, type) {
-    console.log(`My favourite type of shoes is a ${this.type} of a brand ${this.brand}`)
+    console.log(`My favourite type of shoes is a ${this.type} of a brand ${this.brand}.`)
 }
 
 const myOwnBind = function (func, info) {
