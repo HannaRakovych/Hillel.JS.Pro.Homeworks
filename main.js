@@ -42,9 +42,9 @@ Universal.prototype = Object.create(Auto.prototype);
 
 
 
-const car_3 = new Hatchback(3.2, 'petrol', 2.6, 'Honda Civic', 2019, 1500, false);
-const car_1 = new Sedan(6.1, 'petrol', 3.1, 'Honda Accord', 2017, 1640, true);
-const car_2 = new Universal(2.5, 'petrol', 2.9, 'Volvo V90', 2021, 2130, true);
+const car_1 = new Hatchback(3.2, 'petrol', 2.6, 'Honda Civic', 2019, 1500, false);
+const car_2 = new Sedan(6.1, 'petrol', 3.1, 'Honda Accord', 2017, 1640, true);
+const car_3 = new Universal(2.5, 'petrol', 2.9, 'Volvo V90', 2021, 2130, true);
 
 
 Auto.prototype.startRide = function() {
