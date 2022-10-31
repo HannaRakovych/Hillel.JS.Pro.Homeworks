@@ -1,0 +1,76 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Roboto Condensed';
+    color: rgba(224, 224, 220, 0.95);
+}
+
+body {
+    background-color: rgba(21, 21, 20, 0.95);
+}
+
+.main {
+    margin: 150px auto;
+    width: 500px;
+}
+
+.list-name {
+    text-transform: uppercase;
+    font-size: 46px;
+    font-weight: 600;
+    margin: -50px 0 25px 100px;
+}
+
+.field {
+    display: flex;
+}
+
+.field .btn {
+    width: 70px;
+    background-color:rgba(218, 120, 1, 0.95);
+    border: none;
+    cursor: pointer;
+    margin-bottom: 40px;
+}
+
+.btn:active {
+    filter: brightness(110%);
+}
+
+.input {
+    margin-bottom: 40px;
+    background-color: rgba(16, 16, 13, 0.95);
+    color: #D4D4D2;
+    height: 45px;
+    width: 450px;
+    font-size: 18px;
+    padding-left: 20px;
+    border: none;
+    outline: none;
+}
+
+.list-of-tasks {
+    padding: 0;
+}
+
+.li {
+    list-style: none;
+}
+
+.new-task {
+    list-style: none;
+    width: 500px;
+    height: 75px;
+    background-color: rgba(16, 16, 13, 0.95);
+    padding: 15px 15px 0 15px;
+    margin-bottom: 20px;
+}
+
+.btn-delete-task {
+    margin-left: 450px;
+    margin-top: -35px;
+    cursor: pointer;
+}
+
+.btn-delete-task:active {
+    filter: brightness(110%);
+}
