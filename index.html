@@ -3,10 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="./style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Homework 13 - BOM</title>
 </head>
 <body>
-    
+    <!--1. Input-поле із кнопкою «Start timeout» — у інпут-полі користувач може ввести кількість відповідних секунд, які залишилися у росії та росіяни до їх зникнення-->
+    <div class="timeout-message">
+        <form>
+            <label>
+                <input type="number" class="put-seconds-to-destruction" placeholder="In how many seconds will the russians be destroyed?">
+            </label>
+            <button class="btn btn-timeout-message">Start timeout</button>
+        </form>
+    </div>
+
+    <!--2. Input-поле з типом date та кнопка Start Campaign.-->
+
+    <div class="timeout-date">
+        <input type="date" class="put-date" id="input2">
+        <button class="btn btn-timeout-date">Start Campaign</button>
+        <p class="end-time"></p>
+    </div>
+
+    <!--3. Вивести ціну обраного телефону-->
+    <div class="calculate-cost">
+        <div class="calculate-wrapper">
+            <div>
+                <p>Оберіть марку телефона:</p>
+                <label>
+                    <select class="calculate-phone-price">
+                        <option value="Iphone">Iphone</option>
+                        <option value="Samsung">Samsung</option>
+                        <option value="Pixel">Pixel</option>
+                        <option value="OnePlus">OnePlus</option>
+                    </select>
+                </label>
+            </div>
+
+            <div>
+                <p>Кількість оперативної пам'яті:</p>
+                <label>
+                    <select class="ram">
+                        <option value="2">2</option>
+                        <option value="4">4</option>
+                        <option value="6">6</option>
+                        <option value="8">8</option>
+                    </select>
+                </label>
+            </div>
+
+            <div>
+                <p>Кількість вбудованної пам'яті:</p>
+                <label>
+                    <select class="built-in-memory">
+                        <option value="64">64</option>
+                        <option value="128">128</option>
+                        <option value="256">256</option>
+                        <option value="512">512</option>
+                    </select>
+                </label>
+            </div>
+        </div>
+
+        <button class="btn calculate-btn">Calculate</button>
+    </div>
+
+    <script src="./main.js"></script>
 </body>
 </html>
