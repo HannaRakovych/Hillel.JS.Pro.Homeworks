@@ -17,43 +17,28 @@ const btnFindoutCentury = document.querySelector('.btn-1');
 const resultCentury = document.querySelector('.result-1');
 
 function determineCentury(inputValue) {
-    if (inputValue === '1000') {
-        resultCentury.innerHTML = `Result: It is a 10th century.`
-        userYear.innerHTML = " ";
-    } else if (inputValue > 1000 && inputValue < 1101) {
-        resultCentury.innerHTML = `Result: It is a 11th century.`;
-    } else if (inputValue > 1100 && inputValue < 1201) {
-        resultCentury.innerHTML = `Result: It is a 12th century.`;
-    } else if (inputValue > 1200 && inputValue < 1301) {
-        resultCentury.innerHTML = `Result: It is a 13th century.`;
-    } else if (inputValue > 1300 && inputValue < 1401) {
-        resultCentury.innerHTML = `Result: It is a 14th century.`;
-    } else if (inputValue > 1400 && inputValue < 1501) {
-        resultCentury.innerHTML = `Result: It is a 15th century.`;
-    } else if (inputValue > 1500 && inputValue < 1601) {
-        resultCentury.innerHTML = `Result: It is a 16th century.`;
-    } else if (inputValue > 1600 && inputValue < 1701) {
-        resultCentury.innerHTML = `Result: It is a 17th century.`;
-    } else if (inputValue > 1700 && inputValue < 1801) {
-        resultCentury.innerHTML = `Result: It is a 18th century.`;
-    } else if (inputValue > 1800 && inputValue < 1901) {
-        resultCentury.innerHTML = `Result: It is a 19th century.`;
-    } else if (inputValue > 1900 && inputValue < 2001) {
-        resultCentury.innerHTML = `Result: It is a 20th century.`;
-    } else if (inputValue > 2000 && inputValue < 2101) {
-        resultCentury.innerHTML = `Result: It is a 21th century.`;
-    } else if (inputValue.length > 4 || inputValue.length < 4 || validateIfNum(inputValue)) {
-        alert ('You made a mistake. Try one more time!');
-    } else if (inputValue > 2100) {
-        alert ('Put the year less then 2100 please');
-    } else if (validate(inputValue)) {
-        return 'A field should has a value. Try one more time!';
-    } 
+
+    let century = Math.floor(inputValue / 100) + 1;
+
+    switch(century % 10) {
+
+        case 1:
+            century = century + 'st';
+            break;
+        case 2:
+            century = century + 'nd';
+            break;
+        case 3:
+            century = century + 'rd';
+            break;
+        default:
+            century = century + 'th';
+    }
+    return century;
 }
 
-btnFindoutCentury.addEventListener('click', function (event) {
-    event.target;
-    determineCentury(userYear.value);
+btnFindoutCentury.addEventListener('click', () => {
+    resultCentury.innerHTML = `Result: ${userYear.value} is a ${determineCentury(userYear.value)} century.`
 })
 
 //2.
@@ -63,28 +48,21 @@ const result2 = document.querySelector('.result-2');
 
 function conversionToNum(value) {
     const vowels = 'aeiouy';
-    const consonants = 'bcdfgklmnpqstvxzhrw';
-    const symbols = '.,- '
-    let newString = '';
+    let result = '';
     validate(value);
 
-    for (let i = 0; i < value.length; i++) {
-        const el = value[i];
-
-        if (vowels.includes(el)) {
-            newString += 1;
-        } else if (consonants.includes(el)) {
-            newString += 0;
-        } else if (symbols.includes(el)) {
-            newString += 0;
+    for (let letter of value) {
+        if (vowels.includes(letter)) {
+            result += '1';
+        } else {
+            result += '0';
         }
     }
-    result2.innerHTML = `Result: ${newString}`;
+    return result;
 }
 
-btnTask2.addEventListener('click', function(event) {
-    event.target;
-    conversionToNum(usersRandomLetters.value)
+btnTask2.addEventListener('click', () => {
+    result2.innerHTML = `Result: ${conversionToNum(usersRandomLetters.value)}`
 })
 
 //3.
@@ -150,7 +128,7 @@ function transformIntoPhoneNum(integers) {
     } else if (integers.length !== 10) {
         alert ('Please try one more time! You should enter 10 integers.')
     } else {
-        phoneNumberResult.innerHTML = `(${integers.slice(0, 3)}) ${integers.slice(3, 6)}  ${integers.slice(6, 8)} ${integers.slice(8, 10)}`;
+        phoneNumberResult.innerHTML = `(${integers.slice(0, 3)}) ${integers.slice(3, 6)}  - ${integers.slice(6, 10)}`;
     }
 }
 
