@@ -4,6 +4,7 @@ function validate(input) {
     }
 }
 
+// eslint-disable-next-line no-unused-vars
 function validateIfNum(input) {
     if (!Number.isInteger(input)) {
     return false;
@@ -13,13 +14,11 @@ function validateIfNum(input) {
 
 //1.
 const userYear = document.querySelector('.data-1');
-const btnFindoutCentury = document.querySelector('.btn-1');
+const btnFindOutCentury = document.querySelector('.btn-1');
 const resultCentury = document.querySelector('.result-1');
 
 function determineCentury(inputValue) {
-
     let century = Math.floor(inputValue / 100) + 1;
-
     switch(century % 10) {
 
         case 1:
@@ -37,7 +36,11 @@ function determineCentury(inputValue) {
     return century;
 }
 
-btnFindoutCentury.addEventListener('click', () => {
+btnFindOutCentury.addEventListener('click', () => {
+    if (userYear.value < 1 || userYear.value > 9999) {
+        alert ('Try one more time. You have put an incorrect value.');
+        return;
+    }
     resultCentury.innerHTML = `Result: ${userYear.value} is a ${determineCentury(userYear.value)} century.`
 })
 
@@ -46,7 +49,7 @@ const usersRandomLetters = document.querySelector('.data-2');
 const btnTask2 = document.querySelector('.btn-2');
 const result2 = document.querySelector('.result-2');
 
-function conversionToNum(value) {
+function vowelOne(value) {
     const vowels = 'aeiouy';
     let result = '';
     validate(value);
@@ -62,12 +65,12 @@ function conversionToNum(value) {
 }
 
 btnTask2.addEventListener('click', () => {
-    result2.innerHTML = `Result: ${conversionToNum(usersRandomLetters.value)}`
+    result2.innerHTML = `Result: ${vowelOne(usersRandomLetters.value)}`
 })
 
 //3.
 const userWordsInput = document.querySelector('.data-3');
-const reverseBTN = document.querySelector('.btn-3');
+const reverseBtn = document.querySelector('.btn-3');
 const showReverseWords = document.querySelector('.result-3');
 
 function transformWords(string) {
@@ -89,7 +92,7 @@ function transformWords(string) {
     showReverseWords.innerHTML = words.length >= 5 ? `Result: ${result.split(' ').join('')}` : `${result}`;
 }
 
-reverseBTN.addEventListener('click', function (event){
+reverseBtn.addEventListener('click', function (event){
     event.target;
     transformWords(userWordsInput.value);
 })
@@ -99,40 +102,50 @@ reverseBTN.addEventListener('click', function (event){
 const usersRandomNumbers = document.querySelector('.data-4');
 const btnTask4 = document.querySelector('.btn-4');
 const result4 = document.querySelector('.result-4');
+let numbers = [];
 
-function findoutLowestHighestNum(data) {
-    if (validate(data) || validateIfNum(data)) {
-        return result4.innerHTML = 'Result:';
+function highAndLow(inputString) {
+    if (validate(inputString)) {
+        return;
     } else {
-        let inputData = data.split(' ');
-        let minNum = Math.min(...inputData);
-        let maxNum = Math.max(...inputData);
-
-        result4.innerHTML = `Min number: ${minNum}. Max number: ${maxNum}.`
-    }
+        numbers = inputString.split(" ");
+        numbers.sort((a, b) => b - a);
+        result4.innerHTML = `Result: ${numbers[numbers.length - 1]} min, ${numbers[0]} max.`;
+    }   
 }
 
-btnTask4.addEventListener('click', function (event) {
-    event.target;
-    findoutLowestHighestNum(usersRandomNumbers.value);
+btnTask4.addEventListener('click', function() {
+    highAndLow(usersRandomNumbers.value);
 })
 
 //5.
 const phoneNumberInput = document.querySelector('.data-5');
-const transformBTN = document.querySelector('.btn-5');
+const transformBtn = document.querySelector('.btn-5');
 const phoneNumberResult = document.querySelector('.result-5');
 
-function transformIntoPhoneNum(integers) {
-    if (validate(integers) || validateIfNum(integers)) {
-        alert ('Please try one more time!')
-    } else if (integers.length !== 10) {
-        alert ('Please try one more time! You should enter 10 integers.')
-    } else {
-        phoneNumberResult.innerHTML = `(${integers.slice(0, 3)}) ${integers.slice(3, 6)}  - ${integers.slice(6, 10)}`;
+const arrayOfNum = [];
+
+phoneNumberInput.addEventListener('input', (event) => {
+    const el = event.data;
+    if (el && !isNaN(el)) {
+        arrayOfNum.push(el);
     }
+    if (!el) {
+        arrayOfNum.pop();
+    }
+});
+
+function createPhoneNumber(value) {
+    if (value && value.length === 10) {
+        const phoneNum = value.join("").replace(/(...)(...)(.*)/, "($1) $2-$3");
+        phoneNumberResult.innerHTML = `Result: ${phoneNum}`;
+    } else {
+        phoneNumberResult.innerHTML = "You have made some mistake. Put ten numbers!"
+    }
+    arrayOfNum.length = 0;
+    phoneNumberInput.value = "";
 }
 
-transformBTN.addEventListener('click', function(event) {
-    event.target;
-    transformIntoPhoneNum(phoneNumberInput.value);
+transformBtn.addEventListener('click', () => {
+    createPhoneNumber(arrayOfNum);
 })
