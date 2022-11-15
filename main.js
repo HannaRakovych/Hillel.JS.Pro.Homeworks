@@ -3,7 +3,6 @@ const API_Key = 'L2uYtoQQwJS67ja8rwrJF9gfl1Bi8vZk';
 const mainContainer = document.querySelector('.container-select-city');
 const city_field = document.querySelector('#city-field');
 const getWeatherBtn = document.querySelector('.get-weather');
-// const daysWheatherList = document.querySelector('.wheather-list');
 const childDiv = document.createElement('div');
 mainContainer.append(childDiv);
 
