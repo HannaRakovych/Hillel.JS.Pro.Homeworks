@@ -39,10 +39,7 @@ function convertToCelsius(temp) {
 }
 
 function loadData(id) {
-    xhr.open(
-        "GET",
-        `http://dataservice.accuweather.com/forecasts/v1/daily/5day/${id}?apikey=${API_Key}`
-    );
+    xhr.open("GET", `http://dataservice.accuweather.com/forecasts/v1/daily/5day/${id}?apikey=${API_Key}`);
     xhr.send();
     xhr.onload = function () {
         if (xhr.status !== 200) {
