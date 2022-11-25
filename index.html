@@ -3,10 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>HW 16</title>
 </head>
 <body>
-    
+    <section class="main">
+        <h1 class="title">Search for movies</h1>
+
+        <div class="search-container">
+            <label for="name" class="label-for-search"></label>
+            <input type="text" class="input-search" name="name" id="name" placeholder="Find Movies">
+            <img src="./img/magnifier_icon-icons.com_48267.png" alt="" class="btn-search-icon"> 
+        </div>
+
+        <div class="wrapper-results">
+            <div class="list-movies"></div>
+            <div class="movies-detais" style="position: absolute; color: white;
+            background-color: black; top:860px; left:0; min-width: 100vw; padding-left: 20px;"></div>
+            <div class="pages"></div>
+        </div>
+          
+    </section>
+
+    <script src="./main.js"></script>
+
 </body>
-</html>
